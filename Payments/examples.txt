@@ -1,0 +1,62 @@
+result = 
+
+C:\Users\LLerma\Documents\GitHub\Projects\Payments>.\venv\Scripts\activate.bat
+
+(venv) C:\Users\LLerma\Documents\GitHub\Projects\Payments\sqlal>python sqlapp.py
+
+# Clase → Regresa instancias de dicha clase
+# Argumentos → Regresa Tuplas
+
+>>> from app2 import session
+>>> from app2 import User
+
+user4 = User(username="user4", email="email4@mail.com")
+session.add(user4)
+session.commit()
+
+#	SELECT *
+users = session.query(User).all()
+
+#	Filtrar
+users = session.query(User).filter(
+	User.id >= 2
+	)
+	
+#	Seleccionar atributos
+users = session.query(User.x, User.y).filter(
+	User.id >= 2
+)
+
+#.first()
+#.one() 
+
+#	Modificar registros
+
+## 1
+
+	user = session.query(User).filter(User.id==1).first()
+	user.username = "nuevo username"
+	user.email = "nuevo@email.com"
+	
+	session.add(user)
+	session.commit()
+	
+## 2
+
+	session.query(User).filter(
+		User.id==1
+		).update(
+			{
+				User.name : "nuevo username",
+				User.email : "nuevo@email.com"
+			}
+		)
+	
+	
+#	Eliminar registros
+
+	sesion.query(User).filter(
+		User.id == 1
+	).delete()
+	
+	sesision.commit()
