@@ -13,7 +13,7 @@ while enter == "1":
 
     def INSERT():
         insert()
-        return "\nINSERT Done"
+        return ""
 
     def UPDATE():
         update()
@@ -28,7 +28,7 @@ while enter == "1":
         return ""
 
     def menu():
-        print("----------- Choose an option -----------")
+        print("--------------- Opciones ---------------")
         print("1. INSERT")
         print("2. UPDATE")
         print("3. SELECT")
@@ -47,16 +47,14 @@ while enter == "1":
 
     os.system('CLS')
     menu()
-    #case = int(input("Choose an option: "))
-    case = val_1_2_3("Choose an option: ")
+  
+    case = val_1_2_3("Selecciona una opción: ")
     os.system('CLS')
     print(function(case))
 
-    enter = val_0_1("\nContinuar?\n\nSI: 1\nNO: 0\n")
-
-    #enter = str(input("\nContinue?\n\nYES: Press 1\nNO:  Press anything else\n"))
+    enter = str(val_0_1("Continuar?\n\nSI: 1\nNO: 0\n"))
 
 
 os.system('CLS')
-print("\nGracias!")
+print("Gracias!")
 

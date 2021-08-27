@@ -23,3 +23,17 @@ def update():
     )
 
     session.commit()
+
+
+
+def update_to_false(v_id_pago):
+    
+    v_activo = False
+    session.query(Pay).filter(
+        Pay.id_pago == v_id_pago
+    ).update(
+        {
+            Pay.activo : v_activo
+        }
+    )
+    session.commit()

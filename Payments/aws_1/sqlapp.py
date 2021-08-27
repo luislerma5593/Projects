@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 #mysql+pymysql://lldlt:Luislerma1996$@bedu-llt-2101.cqoiqc8blzss.us-east-2.rds.amazonaws.com/python_db
 
-engine = create_engine('mysql+pymysql://lldlt:Luislerma1996$@bedu-llt-2101.cqoiqc8blzss.us-east-2.rds.amazonaws.com/python_db')
+engine = create_engine('mysql+pymysql://lldlt:***@bedu-llt-2101.cqoiqc8blzss.us-east-2.rds.amazonaws.com/python_db')
 Base = declarative_base()
 
 class User(Base):

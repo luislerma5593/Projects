@@ -29,3 +29,48 @@ def val_1_2_3(texto):
         else:
             return val
             break
+
+def val_dia(texto):
+    while True:
+        try:
+            val = int(input(texto))
+        except ValueError:
+            print("ValueError")
+            continue
+
+        if val < 1 or val > 31:
+            print("Ingresa una opción valida")
+            continue
+        else:
+            return val
+            break
+
+def val_mes(texto):
+    while True:
+        try:
+            val = int(input(texto))
+        except ValueError:
+            print("ValueError")
+            continue
+
+        if val < 1 or val > 12:
+            print("Ingresa una opción valida")
+            continue
+        else:
+            return val
+            break
+
+def val_año(texto):
+    while True:
+        try:
+            val = int(input(texto))
+        except ValueError:
+            print("ValueError")
+            continue
+
+        if val < 2000 or val > 2021:
+            print("Ingresa una opción valida")
+            continue
+        else:
+            return val
+            break
