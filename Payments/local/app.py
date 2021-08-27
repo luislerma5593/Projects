@@ -13,7 +13,7 @@ class Pay(Base):
     __tablename__ = "payments"
     
     id_pago = Column(Integer(), primary_key=True)
-    id_test = Column(Integer(), autoincrement=True)
+    #id_test = Column(Integer(), autoincrement=True)
     id_contrato = Column(Integer())
     id_cliente = Column(Integer())
     fecha = Column(Date())

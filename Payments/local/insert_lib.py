@@ -41,7 +41,7 @@ def insert():
         id_primer_pago_posterior = payments[0].id_pago
         id_ultimo_pago_posterior = payments[-1].id_pago
         print("Hay",num_pagos_posteriores,"pagos posteriores a la fecha:",str_fecha)
-        print("Se modificaran los ID de pago a partir del",id_primer_pago_posterior,"hasta el ",id_ultimo_pago_posterior)
+        print("Se modificaran los siguientes ID de pago")
         print("\nid_pago \t id_contrato \t id_cliente \t fecha \t \t  monto")
         for pay in payments:
             print(pay.id_pago,"\t\t",pay.id_contrato,"\t\t",pay.id_cliente,"\t\t", pay.fecha,"\t", pay.monto)
