@@ -28,7 +28,7 @@ def select_f():
         print("Opción inválida")
 
     if (opc == "1") or (opc == "2"):
-        print("id_pago \t id_contrato \t id_cliente \t fecha \t \t \t monto \t\t\t activo")
+        print("id_operacion \t id_contrato \t id_cliente \t fecha \t \t \t monto \t\t\t activo")
         for pay in payments:
-            print(pay.id_pago,"\t\t",pay.id_contrato,"\t\t",pay.id_cliente,"\t\t", pay.fecha,"\t\t", pay.monto,"\t\t", pay.activo)
+            print(pay.id_operacion,"\t\t",pay.id_contrato,"\t\t",pay.id_cliente,"\t\t", pay.fecha,"\t\t", pay.monto,"\t\t", pay.activo)
     

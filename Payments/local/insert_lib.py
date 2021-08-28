@@ -19,9 +19,31 @@ def insert():
     v_fecha = str_fecha
     v_monto = float(input("Introduce el monto: "))
     v_activo = True
+    
+## inicio
+
+    """pagos_por_contrato = session.query(Pay).filter(
+                Pay.id_contrato == v_id_contrato
+            ).count()
+    
+    if pagos_por_contrato == 0:
+        v_id_pago = 1
+
+    else:
+
+        id_contrato_anterior = session.query(Pay).filter(
+                    Pay.id_contrato == v_id_contrato
+                ).order_by(
+                    Pay.id_operacion.desc()
+                ).first()
+
+        v_id_pago = id_contrato_anterior.id_pago + 1"""
+
+## final
 
     payments = session.query(Pay).filter(
             Pay.id_contrato == v_id_contrato
+            and Pay.id_cliente == v_id_cliente
         ).filter(
             Pay.fecha > str_fecha
         )
@@ -38,17 +60,17 @@ def insert():
 
     else:
         os.system('CLS')
-        id_primer_pago_posterior = payments[0].id_pago
-        id_ultimo_pago_posterior = payments[-1].id_pago
+        id_primer_pago_posterior = payments[0].id_operacion
+        id_ultimo_pago_posterior = payments[-1].id_operacion
         print("Hay",num_pagos_posteriores,"pagos posteriores a la fecha:",str_fecha)
         print("Se modificaran los siguientes ID de pago")
-        print("\nid_pago \t id_contrato \t id_cliente \t fecha \t \t  monto")
+        print("\nid_operacion \t id_contrato \t id_cliente \t fecha \t \t  monto")
         for pay in payments:
-            print(pay.id_pago,"\t\t",pay.id_contrato,"\t\t",pay.id_cliente,"\t\t", pay.fecha,"\t", pay.monto)
+            print(pay.id_operacion,"\t\t",pay.id_contrato,"\t\t",pay.id_cliente,"\t\t", pay.fecha,"\t", pay.monto)
 
         i = 0
 
-        for id_pago in range(id_primer_pago_posterior,id_ultimo_pago_posterior+1):
+        for id_operacion in range(id_primer_pago_posterior,id_ultimo_pago_posterior+1):
             
             if payments[i].activo == 1 and payments[i].id_contrato == v_id_contrato and payments[i].id_cliente == v_id_cliente:
                 add_missing_user = Pay(id_contrato = payments[i].id_contrato, id_cliente = payments[i].id_cliente, fecha = payments[i].fecha, monto = payments[i].monto, activo = True)
@@ -57,7 +79,7 @@ def insert():
             
             i+=1
 
-            update_to_false(id_pago)
+            update_to_false(id_operacion)
             
         
 

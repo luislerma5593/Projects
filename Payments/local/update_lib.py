@@ -3,7 +3,7 @@ from app import Pay
 
 def update():
 
-    v_id_pago = int(input("Inserta el id de pago que deseas modificar: "))  
+    v_id_operacion = int(input("Inserta el id de operacion que deseas modificar: "))  
     #v_id_contrato = int(input("Introduce el nuevo número de contrato: "))
     #v_id_cliente = int(input("Introudce el nuevo número de cliente: "))
     #v_fecha = str(input("Introduce la nueva fecha (aaaa-mm-dd): "))
@@ -11,7 +11,7 @@ def update():
     #v_activo = True
 
     session.query(Pay).filter(
-        Pay.id_pago == v_id_pago
+        Pay.id_operacion == v_id_operacion
     ).update(
         {
             #Pay.id_contrato : v_id_contrato,
@@ -26,11 +26,11 @@ def update():
 
 
 
-def update_to_false(v_id_pago):
+def update_to_false(v_id_operacion):
     
     v_activo = False
     session.query(Pay).filter(
-        Pay.id_pago == v_id_pago
+        Pay.id_operacion == v_id_operacion
     ).update(
         {
             Pay.activo : v_activo
