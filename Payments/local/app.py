@@ -3,10 +3,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, DateTime, Float, Boolean, Date
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy_utils import database_exists, create_database
 
 #mysql+pymysql://lldlt:Luislerma1996$@bedu-llt-2101.cqoiqc8blzss.us-east-2.rds.amazonaws.com/python_db
 
-engine = create_engine('mysql+pymysql://root@localhost/python_db2')
+engine = create_engine('mysql+pymysql://root@localhost/IoConveyor')
+
+if not database_exists(engine.url):
+    create_database(engine.url)
+
 Base = declarative_base()
 
 class Pay(Base):
