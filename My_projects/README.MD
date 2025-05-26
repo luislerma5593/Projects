@@ -1,3 +1,7 @@
 # My projects
 
-* [test](ML/credit_card_fraud_detection.ipynb)
+* [Cars dataset EDA](EDA/Cars_features_EDA.ipynb)
+
+* [Credit card fraud prediction](ML/credit_card_fraud_detection.ipynb)
+* [Customer churn detection](ML/customer_churn_detection.ipynb)
+* [Fire prediction model](ML/Fire_prediction_model.ipynb)
