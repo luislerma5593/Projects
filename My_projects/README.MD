@@ -6,5 +6,5 @@
 * [Customer churn detection](ML/customer_churn_detection.ipynb)
 * [Fire prediction model](ML/Forest_fire_prediction/Fire_prediction_model.ipynb)
 * [House price prediction](ML/Houses_prices_prediction.ipynb)
-* [Properties in market Survival Analysis](ML/Survival Analysis/Houses_prices_prediction.ipynb)
+* [Properties in market Survival Analysis](ML/Survival_analysis/Property_survivial_analysis_time2event.ipynb)
 
