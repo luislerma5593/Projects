@@ -5,3 +5,4 @@
 * [Credit card fraud prediction](ML/credit_card_fraud_detection.ipynb)
 * [Customer churn detection](ML/customer_churn_detection.ipynb)
 * [Fire prediction model](ML/Forest_fire_prediction/Fire_prediction_model.ipynb)
+* [House price prediction](ML/Houses_prices_prediction.ipynb)
